@@ -41,7 +41,7 @@
         }
 
         .top-bar-right a {
-            color: #3b82f6;
+            color: #fbbf24;
             text-decoration: none;
             font-weight: 600;
         }
@@ -66,20 +66,13 @@
         .logo {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 15px;
         }
 
         .logo-img {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 700;
-            font-size: 18px;
+            width: 100px;
+            height: 100px;
+            background: url('./logo.jpeg') center/contain no-repeat;
         }
 
         .logo-text h3 {
@@ -113,8 +106,8 @@
         }
 
         .nav-cta {
-            background: #2563eb;
-            color: white;
+            background: #86efac;
+            color: #1e293b;
             padding: 10px 25px;
             border-radius: 5px;
             text-decoration: none;
@@ -124,8 +117,8 @@
         }
 
         .nav-cta:hover {
-            background: #1e40af;
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+            background: #4ade80;
+            box-shadow: 0 4px 12px rgba(134, 239, 172, 0.3);
         }
 
         .hero {
@@ -216,6 +209,26 @@
             color: #2563eb;
         }
 
+        .btn-green {
+            background: #86efac;
+            color: #1e293b;
+        }
+
+        .btn-green:hover {
+            background: #4ade80;
+            transform: translateY(-2px);
+        }
+
+        .btn-yellow {
+            background: #fbbf24;
+            color: #1e293b;
+        }
+
+        .btn-yellow:hover {
+            background: #f59e0b;
+            transform: translateY(-2px);
+        }
+
         .services {
             padding: 80px 20px;
             max-width: 1200px;
@@ -229,7 +242,7 @@
 
         .section-label {
             display: inline-block;
-            color: #2563eb;
+            color: #86efac;
             font-size: 13px;
             font-weight: 700;
             text-transform: uppercase;
@@ -264,23 +277,41 @@
             border-radius: 10px;
             border: 1px solid #e2e8f0;
             transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #86efac 0%, #4ade80 100%);
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+
+        .service-item:hover::before {
+            transform: scaleX(1);
         }
 
         .service-item:hover {
-            border-color: #2563eb;
-            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.1);
+            border-color: #86efac;
+            box-shadow: 0 10px 30px rgba(134, 239, 172, 0.2);
             transform: translateY(-5px);
         }
 
         .service-icon {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
-            border-radius: 8px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #86efac 0%, #4ade80 100%);
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 24px;
+            font-size: 28px;
             margin-bottom: 20px;
         }
 
@@ -307,12 +338,12 @@
             content: '✓';
             position: absolute;
             left: 0;
-            color: #2563eb;
+            color: #4ade80;
             font-weight: bold;
         }
 
         .cta-banner {
-            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
             padding: 40px;
             border-radius: 10px;
             text-align: center;
@@ -331,26 +362,36 @@
 
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
             max-width: 1200px;
             margin: 0 auto;
         }
 
         .feature-item {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 10px;
             text-align: center;
+            transition: all 0.3s;
+            border: 1px solid #e2e8f0;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
         }
 
         .feature-icon {
             width: 65px;
             height: 65px;
-            background: white;
+            background: linear-gradient(135deg, #86efac 0%, #4ade80 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 auto 20px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            box-shadow: 0 4px 15px rgba(134, 239, 172, 0.3);
             font-size: 28px;
         }
 
@@ -416,7 +457,7 @@
         }
 
         .how-works {
-            background: #f8fafc;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
             padding: 80px 20px;
         }
 
@@ -434,6 +475,12 @@
             padding: 40px 30px;
             border-radius: 10px;
             border: 1px solid #e2e8f0;
+            transition: all 0.3s;
+        }
+
+        .step-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.1);
         }
 
         .step-num {
@@ -492,13 +539,28 @@
             border-radius: 10px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.08);
             border: 1px solid #e2e8f0;
-            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .testimonial-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 32px;
+            font-weight: bold;
         }
 
         .testimonial-stars {
             color: #fbbf24;
             font-size: 22px;
-            margin-bottom: 20px;
         }
 
         .testimonial-text {
@@ -506,7 +568,7 @@
             color: #475569;
             line-height: 1.7;
             font-style: italic;
-            margin-bottom: 25px;
+            text-align: center;
         }
 
         .testimonial-author {
@@ -615,6 +677,66 @@
             font-size: 14px;
         }
 
+        /* Sticky Buttons */
+        .sticky-buttons {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
+            padding: 15px 20px;
+            display: none;
+            gap: 10px;
+            justify-content: center;
+            z-index: 1000;
+            transition: transform 0.3s ease-out;
+        }
+
+        .sticky-buttons.show {
+            display: flex;
+            animation: slideUp 0.3s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        .sticky-buttons a {
+            flex: 1;
+            max-width: 200px;
+            padding: 12px 20px;
+            text-align: center;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        .sticky-call {
+            background: #86efac;
+            color: #1e293b;
+        }
+
+        .sticky-call:hover {
+            background: #4ade80;
+        }
+
+        .sticky-quote {
+            background: #2563eb;
+            color: white;
+        }
+
+        .sticky-quote:hover {
+            background: #1e40af;
+        }
+
         @media (max-width: 768px) {
             .nav-menu {
                 display: none;
@@ -631,6 +753,15 @@
             .top-bar-content {
                 flex-direction: column;
                 gap: 8px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .sticky-buttons a {
+                font-size: 13px;
+                padding: 10px 15px;
             }
         }
     </style>
@@ -651,7 +782,7 @@
     <header class="header">
         <nav class="nav">
             <div class="logo">
-                <div class="logo-img">PP</div>
+                <div class="logo-img"></div>
                 <div class="logo-text">
                     <h3>PERFECT POWER</h3>
                     <p>Licensed Electricians</p>
@@ -674,8 +805,8 @@
             <h1>Licensed Residential Electricians in Victoria</h1>
             <p>Professional electrical services across Victoria. From switchboard upgrades to lighting installation, we keep your home powered safely with fast, affordable, and reliable service.</p>
             <div class="hero-buttons">
-                <a href="tel:0420424450" class="btn btn-white">📞 Call Now</a>
-                <a href="#quote" class="btn btn-outline">Get Free Quote</a>
+                <a href="tel:0420424450" class="btn btn-green">📞 Call Now</a>
+                <a href="#quote" class="btn btn-yellow">Get Free Quote</a>
             </div>
         </div>
     </section>
@@ -729,13 +860,13 @@
 
         <div class="cta-banner">
             <h3>Book Now & Get a Free Electrical Safety Inspection</h3>
-            <a href="#quote" class="btn btn-white" style="background: #2563eb; color: white;">Get Instant Quote</a>
+            <a href="#quote" class="btn" style="background: #2563eb; color: white;">Get Instant Quote</a>
         </div>
     </section>
 
     <section class="why-choose">
         <div class="section-header">
-            <div class="section-label">WHY CHOOSE US</div>
+            <div class="section-label" style="color: #2563eb;">WHY CHOOSE US</div>
             <h2 class="section-title">Why Victorians Choose Perfect Power</h2>
         </div>
         
@@ -801,34 +932,9 @@
         </div>
     </section>
 
-    <section class="how-works">
-        <div class="section-header">
-            <div class="section-label">HOW IT WORKS</div>
-            <h2 class="section-title">Simple 3-Step Process</h2>
-        </div>
-        
-        <div class="steps-container">
-            <div class="step-item">
-                <div class="step-num">1</div>
-                <h3>Request Quote</h3>
-                <p>Quick and easy form - get your quote in minutes</p>
-            </div>
-            <div class="step-item">
-                <div class="step-num">2</div>
-                <h3>Choose Time</h3>
-                <p>Flexible booking around your schedule</p>
-            </div>
-            <div class="step-item">
-                <div class="step-num">3</div>
-                <h3>We Complete</h3>
-                <p>Certified electricians complete job safely</p>
-            </div>
-        </div>
-    </section>
-
     <section class="testimonials">
         <div class="section-header">
-            <div class="section-label">TESTIMONIALS</div>
+            <div class="section-label" style="color: #2563eb;">TESTIMONIALS</div>
             <h2 class="section-title">What Our Victorian Clients Say</h2>
         </div>
         
@@ -836,6 +942,7 @@
             <div class="testimonial-track" id="testimonialTrack">
                 <div class="testimonial-item">
                     <div class="testimonial-content">
+                        <div class="testimonial-avatar">JM</div>
                         <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
                         <p class="testimonial-text">"Perfect Power's team arrived on time, fixed our switchboard, and cleaned up perfectly. Highly recommended!"</p>
                         <div class="testimonial-author">— John M., Melbourne</div>
@@ -843,6 +950,7 @@
                 </div>
                 <div class="testimonial-item">
                     <div class="testimonial-content">
+                        <div class="testimonial-avatar">SL</div>
                         <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
                         <p class="testimonial-text">"We called late at night after power tripped. Electrician arrived within 30 minutes and fixed it quickly. Excellent service!"</p>
                         <div class="testimonial-author">— Sarah L., Geelong</div>
@@ -850,6 +958,7 @@
                 </div>
                 <div class="testimonial-item">
                     <div class="testimonial-content">
+                        <div class="testimonial-avatar">MD</div>
                         <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
                         <p class="testimonial-text">"Upgraded our old switchboard safely and efficiently. Great communication and very fair pricing."</p>
                         <div class="testimonial-author">— Michael D., Ballarat</div>
@@ -857,6 +966,7 @@
                 </div>
                 <div class="testimonial-item">
                     <div class="testimonial-content">
+                        <div class="testimonial-avatar">PK</div>
                         <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
                         <p class="testimonial-text">"Highly professional team! They installed new lighting throughout our home — it looks amazing."</p>
                         <div class="testimonial-author">— Priya K., Bendigo</div>
@@ -864,6 +974,7 @@
                 </div>
                 <div class="testimonial-item">
                     <div class="testimonial-content">
+                        <div class="testimonial-avatar">LP</div>
                         <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
                         <p class="testimonial-text">"Handled our full home rewiring project perfectly. Reliable, clean, and finished earlier than expected."</p>
                         <div class="testimonial-author">— Liam P., Melbourne</div>
@@ -891,19 +1002,32 @@
     </section>
 
     <footer class="footer">
-        <div class="footer-content">
-            <h3>Perfect Power – Licensed Residential Experts</h3>
-            <p>Powering Homes. Protecting Families.</p>
-            <div class="hero-buttons">
-                <a href="tel:0420424450" class="btn btn-white">📞 Call 0420 424 450</a>
-                <a href="#quote" class="btn btn-outline">💬 Get Free Quote</a>
-                <a href="#booking" class="btn btn-outline">📅 Book Service</a>
-            </div>
-            <div class="footer-bottom">
-                <p>Copyright © Perfect Power 2024. All Rights Reserved.</p>
-            </div>
-        </div>
-    </footer>
+      <div class="footer-content">
+          <div class="logo" style="justify-content: center; margin-bottom: 30px;">
+              <div class="logo-img"></div>
+              <div class="logo-text">
+                  <!-- <h3 style="color: white;">PERFECT POWER</h3> -->
+                  <p style="color: #94a3b8;">Licensed Electricians</p>
+              </div>
+          </div>
+          <h3>Perfect Power – Licensed Residential Experts</h3>
+          <p>Powering Homes. Protecting Families.</p>
+          <div class="hero-buttons">
+              <a href="tel:0420424450" class="btn btn-white">📞 Call 0420 424 450</a>
+              <a href="#quote" class="btn btn-outline">💬 Get Free Quote</a>
+              <a href="#booking" class="btn btn-outline">📅 Book Service</a>
+          </div>
+          <div class="footer-bottom">
+              <p>Copyright © Perfect Power 2024. All Rights Reserved.</p>
+          </div>
+      </div>
+  </footer>
+
+    <!-- Sticky Bottom Buttons -->
+    <div class="sticky-buttons">
+        <a href="tel:0420424450" class="sticky-call">📞 Call Now</a>
+        <a href="#quote" class="sticky-quote">💬 Free Quote</a>
+    </div>
 
     <script>
         let slideIndex = 0;
@@ -912,6 +1036,7 @@
         const dotsContainer = document.getElementById('sliderDots');
         const totalSlides = slides.length;
 
+        // Create dots
         for (let i = 0; i < totalSlides; i++) {
             const dot = document.createElement('div');
             dot.className = 'slider-dot';
@@ -940,9 +1065,28 @@
             updateSlider();
         }
 
+        // Auto-play testimonials
         setInterval(() => {
             moveSlide(1);
         }, 5000);
+
+        // Show/hide sticky buttons on scroll
+        const stickyButtons = document.querySelector('.sticky-buttons');
+        
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 300) {
+                stickyButtons.classList.add('show');
+            } else {
+                stickyButtons.classList.remove('show');
+            }
+        });
+
+        // Check initial scroll position
+        if (window.pageYOffset > 300) {
+            stickyButtons.classList.add('show');
+        }
     </script>
 </body>
 </html>
